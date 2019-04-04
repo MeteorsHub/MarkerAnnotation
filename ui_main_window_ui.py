@@ -210,8 +210,11 @@ class Ui_MainWindow(object):
         self.save.setObjectName("save")
         self.quit = QtWidgets.QAction(MainWindow)
         self.quit.setObjectName("quit")
+        self.action_export = QtWidgets.QAction(MainWindow)
+        self.action_export.setObjectName("action_export")
         self.menu.addAction(self.open)
         self.menu.addAction(self.save)
+        self.menu.addAction(self.action_export)
         self.menu.addSeparator()
         self.menu.addAction(self.quit)
         self.menubar.addAction(self.menu.menuAction())
@@ -234,6 +237,7 @@ class Ui_MainWindow(object):
         self.pushButton_9.finger_button_signal['int'].connect(MainWindow.fingerButtonClicked)
         self.pushButton_5.finger_button_signal['int'].connect(MainWindow.fingerButtonClicked)
         self.pushButton_10.finger_button_signal['int'].connect(MainWindow.fingerButtonClicked)
+        self.action_export.triggered.connect(MainWindow.menuExportTriggered)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -264,6 +268,7 @@ class Ui_MainWindow(object):
         self.open.setText(_translate("MainWindow", "打开工作目录"))
         self.save.setText(_translate("MainWindow", "保存标签"))
         self.quit.setText(_translate("MainWindow", "退出"))
+        self.action_export.setText(_translate("MainWindow", "导出标签"))
 
 
 from fingerbutton import FingerButton
