@@ -27,6 +27,7 @@ The `ui_main_window_ui.py` is generated from `ui_main_window.ui` by:
 python -m PyQt5.uic.pyuic ui_main_window.ui -o ui_main_window_ui.py
 ```
 
+
 ## how to use
 
 You need to create a `working_directory` for the image sequences. 
