@@ -1,31 +1,32 @@
 import os
 import sys
-from ui_main_window_ui import Ui_MainWindow
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QListWidgetItem
-from PyQt5.QtGui import QColor, QPixmap, QImage
-from PyQt5 import QtCore, QtGui
 import traceback
 
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtGui import QColor, QPixmap, QImage
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox, QListWidgetItem
+
 from sequence_model import SequenceModel
+from ui_main_window_ui import Ui_MainWindow
 
 
 class MarkerAnnotationMainWindow(QMainWindow, Ui_MainWindow):
-    default_label_texts = ['机位1 标签图', '机位2 标签图', '机位1 参考图', '机位2 参考图']
+    default_label_texts = ['标签图']
 
     def __init__(self, parent=None):
         super(MarkerAnnotationMainWindow, self).__init__(parent)
         self.setupUi(self)
 
         self.cwd = os.getcwd()
-        self.q_pixmaps = [None, None, None, None]
+        self.q_pixmaps = [None]
         self.finger_button_id = 1
 
         self.seq_model = SequenceModel()
 
         self.finger_buttons = [self.pushButton_1, self.pushButton_2, self.pushButton_3, self.pushButton_4,
                                self.pushButton_5, self.pushButton_6, self.pushButton_7, self.pushButton_8,
-                               self.pushButton_9, self.pushButton_10]
-        for i in range(10):
+                               self.pushButton_9]
+        for i in range(9):
             color = '(%d, %d, %d)' % (self.seq_model.anno_color[i][0],
                                       self.seq_model.anno_color[i][1],
                                       self.seq_model.anno_color[i][2])
@@ -63,24 +64,23 @@ class MarkerAnnotationMainWindow(QMainWindow, Ui_MainWindow):
         if seq_list_id is None:
             seq_list_id = int(self.SeqListWidget.currentItem().text())
         imgs = self.seq_model.load_imgs_with_anno(seq_list_id)
-        for i in range(4):
-            if imgs[i] is not None:
-                qimage = QImage(imgs[i].data, imgs[i].shape[1], imgs[i].shape[0], QImage.Format_RGB888)
-                self.q_pixmaps[i] = QPixmap(qimage)
-            else:
-                self.q_pixmaps[i] = None
+        if imgs[0] is not None:
+            qimage = QImage(imgs[0].data, imgs[0].shape[1], imgs[0].shape[0], QImage.Format_RGB888)
+            self.q_pixmaps[0] = QPixmap(qimage)
+        else:
+            self.q_pixmaps[0] = None
         self.show_imgs()
 
     def show_imgs(self):
-        img_labels = [self.img_11, self.img_21, self.img_12, self.img_22]
-        for i in range(4):
+        img_labels = [self.img_11]
+        for i in range(1):
             if self.q_pixmaps[i] is None:
                 img_labels[i].setText(self.default_label_texts[i])
             else:
                 w = img_labels[i].width()
                 h = img_labels[i].height()
                 img_labels[i].setPixmap(self.q_pixmaps[i].scaled(w, h, QtCore.Qt.KeepAspectRatio))
-        for i in range(4):
+        for i in range(1):
             img_labels[i].show()
         return
 
@@ -88,13 +88,7 @@ class MarkerAnnotationMainWindow(QMainWindow, Ui_MainWindow):
         if not self.SeqListWidget.count():
             return
         seq_list_id = int(self.SeqListWidget.currentItem().text())
-        if camera_id == 1 and self.finger_button_id > 5:
-            return
-        if camera_id == 2 and self.finger_button_id <= 5:
-            return
         if camera_id == 1 and self.q_pixmaps[0] is None:
-            return
-        if camera_id == 2 and self.q_pixmaps[1] is None:
             return
 
         if mouse_button_id == 2:
@@ -104,12 +98,6 @@ class MarkerAnnotationMainWindow(QMainWindow, Ui_MainWindow):
                 label_h = self.img_11.height()
                 label_w = self.img_11.width()
                 new_pixmap = self.q_pixmaps[0].scaled(label_w, label_h, QtCore.Qt.KeepAspectRatio)
-                img_h = new_pixmap.height()
-                img_w = new_pixmap.width()
-            else:
-                label_h = self.img_21.height()
-                label_w = self.img_21.width()
-                new_pixmap = self.q_pixmaps[1].scaled(label_w, label_h, QtCore.Qt.KeepAspectRatio)
                 img_h = new_pixmap.height()
                 img_w = new_pixmap.width()
 
@@ -132,13 +120,13 @@ class MarkerAnnotationMainWindow(QMainWindow, Ui_MainWindow):
         if button_id is None:
             self.finger_button_id += 1
             # next item
-            if self.finger_button_id > 10:
+            if self.finger_button_id > 9:
                 if self.SeqListWidget.count():
                     current_item_row = self.SeqListWidget.currentRow() + 1
                     if current_item_row < self.SeqListWidget.count():
                         self.SeqListWidget.item(current_item_row).setSelected(True)
                         self.SeqListWidget.setCurrentRow(current_item_row)
-                self.finger_button_id -= 10
+                self.finger_button_id -= 9
         else:
             self.finger_button_id = button_id
         self.finger_buttons[self.finger_button_id - 1].setChecked(True)

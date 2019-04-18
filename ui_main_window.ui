@@ -59,7 +59,7 @@
            <item row="3" column="0">
             <widget class="FingerButton" name="pushButton_4">
              <property name="text">
-              <string>机位1 无名指</string>
+                 <string>point 4</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -69,7 +69,7 @@
            <item row="4" column="0">
             <widget class="FingerButton" name="pushButton_5">
              <property name="text">
-              <string>机位1 小拇指</string>
+                 <string>point 5</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -79,7 +79,7 @@
            <item row="2" column="0">
             <widget class="FingerButton" name="pushButton_3">
              <property name="text">
-              <string>机位1 中指</string>
+                 <string>point 3</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -89,7 +89,7 @@
            <item row="1" column="0">
             <widget class="FingerButton" name="pushButton_2">
              <property name="text">
-              <string>机位1 食指</string>
+                 <string>point 2</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -105,7 +105,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>机位1 大拇指</string>
+                 <string>point 1</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -124,7 +124,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>机位2 大拇指</string>
+                 <string>point 6</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -134,7 +134,7 @@
            <item row="1" column="1">
             <widget class="FingerButton" name="pushButton_7">
              <property name="text">
-              <string>机位2 食指</string>
+                 <string>point 7</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -144,7 +144,7 @@
            <item row="2" column="1">
             <widget class="FingerButton" name="pushButton_8">
              <property name="text">
-              <string>机位2 中指</string>
+                 <string>point 8</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -154,32 +154,10 @@
            <item row="3" column="1">
             <widget class="FingerButton" name="pushButton_9">
              <property name="text">
-              <string>机位2 无名指</string>
+                 <string>point 9</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
-            <widget class="FingerButton" name="pushButton_10">
-             <property name="text">
-              <string>机位2 小拇指</string>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-             <property name="checked">
-              <bool>false</bool>
-             </property>
-             <property name="autoDefault">
-              <bool>false</bool>
-             </property>
-             <property name="default">
-              <bool>false</bool>
-             </property>
-             <property name="flat">
-              <bool>false</bool>
              </property>
             </widget>
            </item>
@@ -199,80 +177,8 @@
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
          <item row="0" column="0">
-          <layout class="QGridLayout" name="gridLayout_3" rowstretch="0,1,1" columnstretch="0,1,1">
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_6">
-             <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;参考图&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;不在此处打标&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="wordWrap">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="TrackingLabel" name="img_21">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>320</width>
-               <height>240</height>
-              </size>
-             </property>
-             <property name="mouseTracking">
-              <bool>true</bool>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>机位2 标签图</string>
-             </property>
-             <property name="scaledContents">
-              <bool>false</bool>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QLabel" name="img_22">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>320</width>
-               <height>240</height>
-              </size>
-             </property>
-             <property name="mouseTracking">
-              <bool>false</bool>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>机位2 参考图</string>
-             </property>
-             <property name="scaledContents">
-              <bool>false</bool>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
+             <layout class="QGridLayout" name="gridLayout_3" rowstretch="0" columnstretch="0,0">
+                 <item row="0" column="1">
             <widget class="TrackingLabel" name="img_11">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -303,73 +209,10 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
+                 <item row="0" column="0">
             <widget class="QLabel" name="label_5">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;标签图&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;鼠标左键打标&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;右键设置空标签&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QLabel" name="img_12">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>320</width>
-               <height>240</height>
-              </size>
-             </property>
-             <property name="mouseTracking">
-              <bool>false</bool>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>机位1 参考图</string>
-             </property>
-             <property name="scaledContents">
-              <bool>false</bool>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="label_7">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>机位1</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="label_8">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>机位2</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -551,22 +394,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>img_21</sender>
-   <signal>label_click_signal(int,int,int)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>trackingLabelOnClicked(int,int,int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>851</x>
-     <y>234</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>973</x>
-     <y>260</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pushButton_1</sender>
    <signal>finger_button_signal(int)</signal>
    <receiver>MainWindow</receiver>
@@ -711,30 +538,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_10</sender>
-   <signal>finger_button_signal(int)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>fingerButtonClicked(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>117</x>
-     <y>547</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>121</x>
-     <y>655</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>action_export</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>menuExportTriggered()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>486</x>
-     <y>299</y>
+        <x>-1</x>
+        <y>-1</y>
     </hint>
     <hint type="destinationlabel">
      <x>639</x>
